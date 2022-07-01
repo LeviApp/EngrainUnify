@@ -1,3 +1,6 @@
 <app-nav [pageInfo]="pageInfo"></app-nav>
-<app-unitlist [unitInfo]="area1Info"></app-unitlist>
-<app-unitlist [unitInfo]="areaMoreInfo"></app-unitlist>
+
+<div class="unitSection">
+    <app-unitlist [unitInfo]="area1Info" [category]="'Area 1 sq. ft.'"></app-unitlist>
+    <app-unitlist [unitInfo]="areaMoreInfo" [category]="'Area > 1 sq. ft.'"></app-unitlist> 
+</div>

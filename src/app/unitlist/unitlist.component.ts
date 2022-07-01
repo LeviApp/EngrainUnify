@@ -8,6 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class UnitlistComponent implements OnInit {
 
   @Input() unitInfo: any = {};
+  @Input() category: string = "";
+
   public total: any = {};
   public unitList: any = [];
 

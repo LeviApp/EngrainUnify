@@ -1,2 +1,9 @@
-<p>It is there {{unitInfo["total_count"]}}</p>
-<app-unit [unit]="unit" *ngFor="let unit of unitInfo['data']; index as i"></app-unit>
+<section class="groupHead">
+    <h3>{{ category }}</h3>
+    <h3>|</h3>
+    <h3>{{unitInfo['total_count']}} Units</h3>
+
+</section>
+<section class="groupSect">
+    <app-unit [unit]="unit" *ngFor="let unit of unitInfo['data']; index as i"></app-unit>
+</section>
