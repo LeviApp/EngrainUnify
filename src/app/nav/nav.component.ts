@@ -11,6 +11,8 @@ export class NavComponent implements OnInit {
   @Input() pageGroup: any = {};
 
   @Output() groupNumber = new EventEmitter()
+  @Output() arrowTime = new EventEmitter()
+  @Output() inputNumber = new EventEmitter()
 
   constructor() { }
 
@@ -19,13 +21,39 @@ export class NavComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    
-}
 
+}
 
   perPage(e:any) {
     // console.log(e.target.value, "YEH!")
     this.groupNumber.emit(e.target.value)
+  }
 
+  arrowClick(direction: string, current: number) {
+    console.log(direction, current, this.pageInfo["total_pages"])
+    if (direction === "right" && current !== this.pageInfo["total_pages"]) {
+      this.arrowTime.emit(current+1)
+    }
+    else if (direction === "right" && current === this.pageInfo["total_pages"]) {
+      this.arrowTime.emit(1)
+    }
+
+    else if (direction === "left" && current !== 1) {
+      this.arrowTime.emit(current-1)
+    }
+    else if (direction === "left" && current === 1) {
+      this.arrowTime.emit(this.pageInfo["total_pages"])
+    }
+  }
+
+  pageInput(e:any) {
+    // console.log(e.target.value, "YEH!")
+    this.inputNumber.emit(e.target.value)
+  }
+  checkVal(e:any) {
+    if (Number(e.target.value) > this.pageInfo["total_pages"]) {
+      e.preventDefault()
+      e.target.value = this.pageInfo["current_page"]
+    }
   }
 }

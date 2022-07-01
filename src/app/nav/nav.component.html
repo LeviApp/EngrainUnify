@@ -12,15 +12,15 @@
       </select>
     </section>
     <section>
-      <button class="arrow left-arrow">
+      <button class="arrow left-arrow" (click)="arrowClick('left', pageInfo['current_page'])">
 
       </button>
       <h2>Page</h2>
       <input type="number" name="myNumber" id="myNumber" min="1" max="{{pageInfo['total_pages']}}"
-        value="{{pageInfo['current_page']}}">
+        value="{{pageInfo['current_page']}}" (change)="pageInput($event)" (keyup)="checkVal($event)">
       <h2>of</h2>
       <h2>{{pageInfo['total_pages']}}</h2>
-      <button class="arrow right-arrow">
+      <button class="arrow right-arrow" (click)="arrowClick('right', pageInfo['current_page'])">
 
       </button>
 

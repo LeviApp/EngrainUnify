@@ -1,4 +1,4 @@
-<app-nav [pageInfo]="pageInfo" [pageGroup]="pageGroup"  (groupNumber)="selectingNumber($event)"></app-nav>
+<app-nav [pageInfo]="pageInfo" [pageGroup]="pageGroup"  (groupNumber)="selectingNumber($event)" (arrowTime)="pagingArrow($event)" (inputNumber)="inputtingNumber($event)"></app-nav>
 
 <div class="unitSection">
     <app-unitlist [unitInfo]="area1Info" [category]="'Area 1 sq. ft.'"></app-unitlist>
