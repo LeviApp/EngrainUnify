@@ -1,13 +1,18 @@
 nav
-    @media screen and (min-width: 975px)
-
     display: flex
     flex-direction: column
     align-items: center
-    width: 100vw
+    width: 100%
+    max-width: 1440px
+
     img
         width: 50%
+        max-width: 500px
     .pageInfo
+        @media screen and (min-width: 850px)
+            flex-direction: row
+            justify-content: space-around
+            width: 100%
         display: flex
         flex-direction: column
         align-items: center
@@ -16,11 +21,14 @@ nav
         padding: 10px 0
 
         section
+            @media screen and (min-width: 850px)
+                font-size: 1rem
             display: flex
             justify-content: space-around
             align-items: center
-            width: 90vw
-
+            width: 90%
+            max-width: 400px
+            font-size: 0.75rem
             .arrow
                 width: 50px
                 height: 50px
@@ -31,21 +39,25 @@ nav
                 border: 0
             .arrow:hover
                 cursor: pointer
+                outline: 2px solid white
             .right-arrow
                 transform: rotate(180deg)
 
             select
+                @media screen and (min-width: 850px)
+                    font-size: 1.5rem
                 width: 50%
                 background: #243348
-                font-size: 1.5rem
+                font-size: 1.25rem
                 padding: 10px
                 outline: 1px solid white
-            select:after
-                content: "Hello!"
 
             input
+                @media screen and (min-width: 850px)
+                    font-size: 1.5rem
+
                 background: #243348
-                font-size: 1.5rem
+                font-size: 1.25rem
                 border: 0
                 outline: 1px solid white
                 padding: 10px
