@@ -6,12 +6,16 @@ import { EngrainapiService } from './engrainapi.service'
 import { HttpClientModule } from '@angular/common/http';
 import { MainComponent } from './main/main.component';
 import { NavComponent } from './nav/nav.component';
+import { UnitlistComponent } from './unitlist/unitlist.component';
+import { UnitComponent } from './unit/unit.component';
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    NavComponent
-  ],
+    NavComponent,
+    UnitlistComponent,
+    UnitComponent
+    ],
   imports: [
     BrowserModule,
     HttpClientModule,
