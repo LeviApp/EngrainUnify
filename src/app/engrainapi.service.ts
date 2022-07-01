@@ -9,8 +9,10 @@ export class EngrainapiService {
 
   constructor(private http: HttpClient) { }
 
-  getAllUnits(url:string):Observable<any> {
+  // THIS WILL FETCH DATA FROM THE PHP/LARAVEL SERVER BASED ON
+  //THE PER PAGE COUNT AND CURRENT PAGE BEING PASSED IN THE FUNCTION
+  getAllUnits(val1:number, val2:number):Observable<any> {
     const headers = {'API-Key': '7d64ca3869544c469c3e7a586921ba37'}
-    return this.http.get<any>(url, { headers})
+    return this.http.get<any>(`https://engrain-unify.herokuapp.com/?per-page=${val1}&page=${val2}`, { headers})
   }
 }
