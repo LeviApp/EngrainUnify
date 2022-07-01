@@ -12,6 +12,7 @@ export class NavComponent implements OnInit {
 
   @Output() groupNumber = new EventEmitter()
   @Output() arrowTime = new EventEmitter()
+  @Output() inputNumber = new EventEmitter()
 
   constructor() { }
 
@@ -43,6 +44,16 @@ export class NavComponent implements OnInit {
     else if (direction === "left" && current === 1) {
       this.arrowTime.emit(this.pageInfo["total_pages"])
     }
+  }
 
+  pageInput(e:any) {
+    // console.log(e.target.value, "YEH!")
+    this.inputNumber.emit(e.target.value)
+  }
+  checkVal(e:any) {
+    if (Number(e.target.value) > this.pageInfo["total_pages"]) {
+      e.preventDefault()
+      e.target.value = this.pageInfo["current_page"]
+    }
   }
 }

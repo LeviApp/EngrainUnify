@@ -54,4 +54,15 @@ export class MainComponent implements OnInit, OnChanges {
     })
   }
 
+  inputtingNumber(vals:number) {
+    this.engrainapiService.getAllUnits(`https://engrain-unify.herokuapp.com/?per-page=${this.pageGroup}&page=${vals}`).subscribe(data => {
+      this.pageInfo = data["pages"];
+      this.pageCurrent = data["pages"]["current_page"];
+      this.pageGroup = data["pages"]["per_page"];
+      this.area1Info = data["area1units"];
+      this.areaMoreInfo = data["areamoreunits"];
+      console.log(data, "hello again from select!")
+    })
+  }
+
 }
