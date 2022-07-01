@@ -18,50 +18,51 @@ export class MainComponent implements OnInit, OnChanges {
 
   constructor(private engrainapiService: EngrainapiService) { }
 
+  // THIS FUNCTION WILL FETCH THE INITIAL DATA BASED ON DEFAULT VALUES
   ngOnInit(): void {
-    this.engrainapiService.getAllUnits("https://engrain-unify.herokuapp.com/?per-page=100&page=1").subscribe(data => {
+    this.engrainapiService.getAllUnits(100, 1).subscribe(data => {
       this.pageInfo = data["pages"];
       this.pageGroup = data["pages"]["per_page"];
       this.area1Info = data["area1units"];
       this.areaMoreInfo = data["areamoreunits"];
-      console.log(data, "hello")
     })
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-      console.log("Things Changing!")
-  }
+  ngOnChanges(changes: SimpleChanges) {}
 
+  // THIS FUNCTION WILL FETCH DATA BASED ON
+  // THE PER PAGE COUNT SELECTED IN THE DROPDOWN
   selectingNumber(vals:number) {
-    this.engrainapiService.getAllUnits(`https://engrain-unify.herokuapp.com/?per-page=${vals}&page=1`).subscribe(data => {
+    this.engrainapiService.getAllUnits(vals, 1).subscribe(data => {
       this.pageInfo = data["pages"];
       this.pageCurrent = data["pages"]["current_page"];
       this.pageGroup = data["pages"]["per_page"];
       this.area1Info = data["area1units"];
       this.areaMoreInfo = data["areamoreunits"];
-      console.log(data, "hello again from select!")
     })
   }
 
+  // THIS FUNCTION WILL FETCH DATA BASED ON
+  // THE ARROWS BEING CLICKED ON AND CURRENT PAGE NUMBER 
   pagingArrow(vals:number) {
-    this.engrainapiService.getAllUnits(`https://engrain-unify.herokuapp.com/?per-page=${this.pageGroup}&page=${vals}`).subscribe(data => {
+    this.engrainapiService.getAllUnits(this.pageGroup, vals).subscribe(data => {
       this.pageInfo = data["pages"];
       this.pageCurrent = data["pages"]["current_page"];
       this.pageGroup = data["pages"]["per_page"];
       this.area1Info = data["area1units"];
       this.areaMoreInfo = data["areamoreunits"];
-      console.log(data, "hello again from arrow!")
     })
   }
 
+  // THIS FUNCTION WILL FETCH DATA BASED ON
+  // THE CURRENT PAGE INPUT NUMBER TYPED IN 
   inputtingNumber(vals:number) {
-    this.engrainapiService.getAllUnits(`https://engrain-unify.herokuapp.com/?per-page=${this.pageGroup}&page=${vals}`).subscribe(data => {
+    this.engrainapiService.getAllUnits(this.pageGroup, vals).subscribe(data => {
       this.pageInfo = data["pages"];
       this.pageCurrent = data["pages"]["current_page"];
       this.pageGroup = data["pages"]["per_page"];
       this.area1Info = data["area1units"];
       this.areaMoreInfo = data["areamoreunits"];
-      console.log(data, "hello again from select!")
     })
   }
 

@@ -16,21 +16,19 @@ export class NavComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    console.log(this.pageInfo, "paging")
-  }
+  ngOnInit(): void {}
 
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges(changes: SimpleChanges) {}
 
-}
-
+  // THIS FUNCTION WILL SEND THE SELECTED
+  // PER PAGE DROPDOWN NUMBER TO INITIATE DATA RELOADING
   perPage(e:any) {
-    // console.log(e.target.value, "YEH!")
     this.groupNumber.emit(e.target.value)
   }
 
+  // THIS FUNCTION WILL SEND THE CORRECT NUMBER BASED ON
+  // THE ARROW BEING CLICKED ON AND CURRENT PAGE TO INITIATE DATA RELOADING
   arrowClick(direction: string, current: number) {
-    console.log(direction, current, this.pageInfo["total_pages"])
     if (direction === "right" && current !== this.pageInfo["total_pages"]) {
       this.arrowTime.emit(current+1)
     }
@@ -46,10 +44,14 @@ export class NavComponent implements OnInit {
     }
   }
 
+  // THIS FUNCTION WILL SEND THE CORRECT NUMBER BASED ON
+  // THE CURRENT PAGE NUMBER BEING INPUTTED TO INITIATE DATA RELOADING
   pageInput(e:any) {
-    // console.log(e.target.value, "YEH!")
     this.inputNumber.emit(e.target.value)
   }
+
+  // THIS FUNCTION WILL FORBID THE USER FROM TYPING IN
+  // A CURRENT PAGE NUMBER THAT IS GREATER THAN THE TOTAL PAGE COUNT 
   checkVal(e:any) {
     if (Number(e.target.value) > this.pageInfo["total_pages"]) {
       e.preventDefault()

@@ -10,18 +10,10 @@ export class UnitlistComponent implements OnInit, OnChanges {
   @Input() unitInfo: any = {};
   @Input() category: string = "";
 
-  public total: any = {};
-  public unitList: any = [];
-
   constructor() { }
 
-  ngOnInit(): void {
-    this.total = this.unitInfo["total_count"];
-    this.unitList = this.unitInfo["data"];
-  }
+  ngOnInit(): void {}
 
-  ngOnChanges(changes: SimpleChanges) {
-    console.log("List is changing", changes)
-}
+  ngOnChanges(changes: SimpleChanges) {}
 
 }

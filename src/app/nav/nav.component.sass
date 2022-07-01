@@ -1,63 +1,74 @@
+
+// THIS IS STYLING FOR THE TOP NAV SECTION
+
 nav
+    align-items: center
     display: flex
     flex-direction: column
-    align-items: center
-    width: 100%
     max-width: 1440px
+    width: 100%
 
     img
-        width: 50%
         max-width: 500px
+        width: 50%
+
     .pageInfo
         @media screen and (min-width: 850px)
             flex-direction: row
             justify-content: space-around
             width: 100%
-        display: flex
-        flex-direction: column
+
         align-items: center
         background: #243348
-        width: 100%
+        display: flex
+        flex-direction: column
         padding: 10px 0
+        width: 100%
 
         section
             @media screen and (min-width: 850px)
                 font-size: 1rem
-            display: flex
-            justify-content: space-around
+
             align-items: center
-            width: 90%
-            max-width: 400px
+            display: flex
             font-size: 0.75rem
+            justify-content: space-around
+            max-width: 400px
+            width: 90%
+
             .arrow
-                width: 50px
-                height: 50px
                 background-image: url("https://media.glassdoor.com/sqll/1186442/engrain-squareLogo-1626652845959.png")
-                background-size: cover                    
-                background-repeat: no-repeat
                 background-position: center center
+                background-repeat: no-repeat
+                background-size: cover                    
                 border: 0
+                height: 50px
+                width: 50px
+
             .arrow:hover
                 cursor: pointer
                 outline: 1px solid white
+
             .right-arrow
                 transform: rotate(180deg)
 
             select
                 @media screen and (min-width: 850px)
                     font-size: 1.5rem
-                width: 50%
+
                 background: #243348
                 font-size: 1.25rem
-                padding: 10px
                 outline: 1px solid white
+                padding: 10px
+                width: 50%
 
             input
                 @media screen and (min-width: 850px)
                     font-size: 1.5rem
-
+                    width: 15%
                 background: #243348
-                font-size: 1.25rem
                 border: 0
+                font-size: 1.25rem
                 outline: 1px solid white
                 padding: 10px
+                width: 10%
