@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -8,6 +8,9 @@ import { Component, OnInit, Input } from '@angular/core';
 export class NavComponent implements OnInit {
 
   @Input() pageInfo: any = {};
+  @Input() pageGroup: any = {};
+
+  @Output() groupNumber = new EventEmitter()
 
   constructor() { }
 
@@ -15,4 +18,14 @@ export class NavComponent implements OnInit {
     console.log(this.pageInfo, "paging")
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    
+}
+
+
+  perPage(e:any) {
+    // console.log(e.target.value, "YEH!")
+    this.groupNumber.emit(e.target.value)
+
+  }
 }
