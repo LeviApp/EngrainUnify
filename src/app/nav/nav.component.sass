@@ -1,0 +1,52 @@
+nav
+    @media screen and (min-width: 975px)
+        background: gold
+
+    
+    display: flex
+    flex-direction: column
+    align-items: center
+    width: 100vw
+    img
+        width: 50%
+    .pageInfo
+        display: flex
+        flex-direction: column
+        align-items: center
+        background: #243348
+        width: 100%
+        padding: 10px 0
+
+        section
+            display: flex
+            justify-content: space-around
+            align-items: center
+            width: 90vw
+
+            .arrow
+                width: 50px
+                height: 50px
+                background-image: url("https://media.glassdoor.com/sqll/1186442/engrain-squareLogo-1626652845959.png")
+                background-size: cover                    
+                background-repeat: no-repeat
+                background-position: center center
+                border: 0
+
+            .right-arrow
+                transform: rotate(180deg)
+
+            select
+                width: 50%
+                background: #243348
+                font-size: 1.5rem
+                padding: 10px
+                outline: 1px solid white
+            select:after
+                content: "Hello!"
+
+            input
+                background: #243348
+                font-size: 1.5rem
+                border: 0
+                outline: 1px solid white
+                padding: 10px
