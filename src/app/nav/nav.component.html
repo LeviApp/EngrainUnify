@@ -12,7 +12,7 @@
       </select>
     </section>
     <section>
-      <button class="arrow left-arrow">
+      <button class="arrow left-arrow" (click)="arrowClick('left', pageInfo['current_page'])">
 
       </button>
       <h2>Page</h2>
@@ -20,7 +20,7 @@
         value="{{pageInfo['current_page']}}">
       <h2>of</h2>
       <h2>{{pageInfo['total_pages']}}</h2>
-      <button class="arrow right-arrow">
+      <button class="arrow right-arrow" (click)="arrowClick('right', pageInfo['current_page'])">
 
       </button>
 
