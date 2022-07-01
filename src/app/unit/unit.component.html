@@ -1,5 +1,7 @@
 <section>
-    <h4>{{unit['unit_number']}}</h4>
+    <h4>Unit # {{unit['unit_number']}}</h4>
+    <p>Updated at</p>
     <p>{{unit['updated_at'] | date:'MMM d, y, h:mm a' }}</p>
+
     <h5>Area: {{unit['area']}}</h5>
 </section>
