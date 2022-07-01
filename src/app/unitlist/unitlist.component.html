@@ -7,3 +7,4 @@
 <section class="groupSect">
     <app-unit [unit]="unit" *ngFor="let unit of unitInfo['data']; index as i"></app-unit>
 </section>
+<h1 *ngIf="unitInfo['data'].length === 0">THERE ARE NO UNITS</h1>
