@@ -25,6 +25,7 @@ export class MainComponent implements OnInit, OnChanges {
       this.pageGroup = data["pages"]["per_page"];
       this.area1Info = data["area1units"];
       this.areaMoreInfo = data["areamoreunits"];
+      console.log({data})
     })
   }
 
