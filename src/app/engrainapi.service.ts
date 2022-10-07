@@ -14,6 +14,5 @@ export class EngrainapiService {
   getAllUnits(val1:number, val2:number):Observable<any> {
     const headers = {'API-Key': '7d64ca3869544c469c3e7a586921ba37'}
     return this.http.get<any>(`http://lskxziypde.us12.qoddiapp.com/?per-page=${val1}&page=${val2}`, { headers})
-    
   }
 }
