@@ -1,6 +1,6 @@
 <nav>
   <img src="https://mma.prnewswire.com/media/948474/Engrain_Logo.jpg" alt="">
-  <section class="pageInfo">
+  <section *ngIf="(pageInfo | json) !== '{}'" class="pageInfo">
     <section>
       <h2>Units Per Page:</h2>
       <select name="pagecount" (change)="perPage($event)">
